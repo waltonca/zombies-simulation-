@@ -3,9 +3,18 @@
 //
 #include "Human.h"
 
-Human::Human(int x, int y) : Organism(x, y) {}
+// Default constructor
+Human::Human() : Organism() {}
 
-void Human::turn(std::vector<std::vector<char>>& grid) {
+// Constructor with City pointer and size parameter
+Human::Human(City *city, int size) : Organism(city, size) {}
+
+// Destructor
+Human::~Human() {}
+
+// Implement the turn method for Human
+
+void Human::turn() {
     // Implement the turn function for Human here
     // For now, we'll keep it empty as we're starting with a simple implementation
 }

@@ -1,3 +1,14 @@
 # ninja log v5
 17	222	7345067049348633	CMakeFiles/Ass4.dir/Organism.cpp.obj	ce616a73214d3b3d
 2	439	7345067051506660	CMakeFiles/Ass4.dir/main.cpp.obj	b650a9e5e094a4cc
+43	640	7345532299161494	CMakeFiles/Ass4.dir/Organism.cpp.obj	ce616a73214d3b3d
+12	408	7345532542545362	CMakeFiles/Ass4.dir/City.cpp.obj	e8bb6f2289ef13d4
+15	390	7345534859930778	CMakeFiles/Ass4.dir/Human.cpp.obj	6f10a1533073c1bc
+11	409	7345539189141088	CMakeFiles/Ass4.dir/City.cpp.obj	e8bb6f2289ef13d4
+24	417	7345539189160381	CMakeFiles/Ass4.dir/Zombie.cpp.obj	f00d149103c3f5cd
+17	419	7345539189208826	CMakeFiles/Ass4.dir/Human.cpp.obj	6f10a1533073c1bc
+5	443	7345557538808056	CMakeFiles/Ass4.dir/City.cpp.obj	e8bb6f2289ef13d4
+12	392	7345558190392281	CMakeFiles/Ass4.dir/City.cpp.obj	e8bb6f2289ef13d4
+10	387	7345559167728571	CMakeFiles/Ass4.dir/City.cpp.obj	e8bb6f2289ef13d4
+8	405	7345563967197357	CMakeFiles/Ass4.dir/Organism.cpp.obj	ce616a73214d3b3d
+406	489	7345563968004717	Ass4.exe	1735f89bfbaa879d

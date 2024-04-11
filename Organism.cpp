@@ -1,18 +1,17 @@
 #include "Organism.h"
-#include "City.h" // Include City.h to access the City class
+#include "City.h" // Include City.h to access the City class=
 
-// Constructor with City pointer and size parameter
-Organism::Organism(City *city, int size) : city(city), size(size) {}
+// Default constructor
+Organism::Organism() : x(0), y(0), size(0), moved(false), city(nullptr) {}
 
-// Destructor
+// Parameterized constructor
+Organism::Organism(City *city, int size) : x(0), y(0), size(size), moved(false), city(city) {}
+
+// Default destructor
 Organism::~Organism() {}
 
-// Overloaded stream insertion operator to print Organism information
+// Overloaded stream insertion operator
 std::ostream& operator<<(std::ostream &output, Organism *organism) {
-    if (organism) {
-        output << "Organism at position (" << organism->x << ", " << organism->y << ")";
-    } else {
-        output << "Null organism";
-    }
+    output << organism;
     return output;
 }
