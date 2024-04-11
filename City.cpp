@@ -1,6 +1,10 @@
 //
 // Created by User on 4/10/2024.
 //
+#include <iostream>
+#include <windows.h>
+#include <conio.h>
+
 #include "City.h"
 #include "Organism.h"
 #include "Human.h"
@@ -8,6 +12,7 @@
 
 #include <cstdlib> // For rand() and srand()
 #include <ctime>   // For time()
+
 
 City::City() : generation(0) {
     // Initialize grid with nullptrs
@@ -19,6 +24,24 @@ City::City() : generation(0) {
 
     // Seed random number generator
     std::srand(std::time(nullptr));
+
+    // Populate city with humans
+    for (int i = 0; i < HUMAN_STARTCOUNT; ++i) {
+        int x = std::rand() % GRIDSIZE;
+        int y = std::rand() % GRIDSIZE;
+        if (grid[x][y] == nullptr) {
+            grid[x][y] = new Human(this, 1); // Assuming size of human is 1
+        }
+    }
+
+    // Populate city with zombies
+    for (int i = 0; i < ZOMBIE_STARTCOUNT; ++i) {
+        int x = std::rand() % GRIDSIZE;
+        int y = std::rand() % GRIDSIZE;
+        if (grid[x][y] == nullptr) {
+            grid[x][y] = new Zombie(this, 1); // Assuming size of zombie is 1
+        }
+    }
 }
 
 // Count the number of organisms of a certain type
@@ -67,13 +90,17 @@ std::ostream& operator<<(std::ostream &output, City &city) {
         for (int j = 0; j < GRIDSIZE; ++j) {
             if (city.grid[i][j] != nullptr) {
                 if (typeid(*city.grid[i][j]) == typeid(Human)) {
+                    city.col(HUMAN_COLOR);
                     output << HUMAN_CH << ' ';
                 } else if (typeid(*city.grid[i][j]) == typeid(Zombie)) {
+                    city.col(ZOMBIE_COLOR);
                     output << ZOMBIE_CH << ' ';
                 } else {
+                    city.col(DASH_COLOR);
                     output << SPACE_CH << ' ';
                 }
             } else {
+                city.col(DASH_COLOR);
                 output << SPACE_CH << ' ';
             }
         }
@@ -85,4 +112,8 @@ std::ostream& operator<<(std::ostream &output, City &city) {
 // Function for colors (not implemented in this solution)
 void City::col(int c) {
     // Implement color functionality if needed
+    HANDLE hConsole;
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, c);
+    return;
 }

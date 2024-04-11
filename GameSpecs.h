@@ -8,11 +8,11 @@ const int ZOMBIE_STARTCOUNT = 5; //initial Zombie count
 const int HUMAN_BREED = 3; // steps until an Human breeds
 const int ZOMBIE_BREED = 8; // steps until an Zombie breeds
 const int ZOMBIE_STARVE = 3; // steps until a Zombie starves and converts back
-const char HUMAN_CH = 111;//72 "H"// ascii for Human
+const char HUMAN_CH = 72;//72 "H"// ascii for Human
 const char SPACE_CH = 45; // "-" ascii dash for empty elements
 const char ZOMBIE_CH = 90;//90 "Z"// ascii for zombie
 const int INTERVAL = 300; // millisecond pause between city steps
-const int ITERATIONS = 1000; // max number of steps
+const int ITERATIONS = 100; // max number of steps
 
 //Colors
 //0  = black				//9  = bright blue
